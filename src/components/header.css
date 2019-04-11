@@ -1,0 +1,30 @@
+.site-header {
+  background: #fff;
+  margin-bottom: 1.45rem;
+  border-radius: 14px 14px 0 0;
+}
+
+.main-navigation {
+  /* background: #FF8000; */
+  background: rgb(255,128,0);
+  background: linear-gradient(180deg, rgba(255,128,0,1) 0%, rgba(217,103,10,1) 100%);
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-navigation > a {
+  color: white;
+  text-decoration: none;
+  padding: .5em;
+  width: 100%;
+  text-align: center;
+  border-right: 1px solid #b6570a;
+}
+
+.main-navigation > a:last-child {
+  border: none;
+}
+
+.main-navigation > a:hover {
+  background: rgba(255, 255, 255, .2);
+}

@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,7 +9,7 @@ import storeImg2 from '../images/about-us/store2.jpg'
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="About Us" />
+    <SEO title="About Brannen's Fastener, Tool, & Supply Company" description="Since our inception almost six decades ago, Brannen's has taken pride in delivering the highest quality and best value to our customers." />
     
     <h1>About Us</h1>
     <img src={ aboutUsImg } alt="The Brannens" style={{float: 'left', margin: '0 10px 10px 0'}} />

@@ -44,7 +44,7 @@ const Layout = ({ children }) => (
         <footer>
           © {new Date().getFullYear()}, Built by
           {` `}
-          <a href="https://www.serafingroup.com" target="_blank">Serafin Group, LLC</a>
+          <a href="https://www.serafingroup.com" target="_blank" rel="noopener noreferrer">Serafin Group, LLC</a>
         </footer>
       </div>
     )}
