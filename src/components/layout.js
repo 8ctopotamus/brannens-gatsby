@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
+import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
@@ -34,11 +34,7 @@ const Layout = ({ children }) => (
         }}
       >
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main
-          style={{
-            padding: `0px 1.0875rem 1.45rem`,
-          }}
-        >
+        <main style={{ padding: `0px 1.0875rem 1.45rem`, }}>
           {children}
         </main>
         <footer>

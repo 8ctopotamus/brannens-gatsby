@@ -11,7 +11,7 @@ const Header = ({ siteTitle }) => (
         justifyContent: 'space-between',
         alignItems: 'center',
       }}>
-        <h1 style={{ 
+        <h2 style={{ 
           margin: 0,
           padding: `1.45rem 1.0875rem`, 
         }}>
@@ -24,7 +24,7 @@ const Header = ({ siteTitle }) => (
           >
             {siteTitle}
           </Link>
-        </h1>
+        </h2>
         <div style={{
           margin: 0,
           padding: `1.45rem 1.0875rem`, 

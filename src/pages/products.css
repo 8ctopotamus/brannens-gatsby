@@ -1,0 +1,14 @@
+.brand-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.brand-logos > * {
+  width: 200px;
+  height: auto;
+}
+
+.brand-logos > *:hover {
+  opacity: .75;
+}
