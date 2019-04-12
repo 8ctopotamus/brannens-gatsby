@@ -4,8 +4,10 @@ import React from "react"
 
 import './header.css';
 
-const Header = ({ siteTitle }) => (
-  <header className="site-header">
+const Header = ({ siteTitle, toggleLang, lang }) => {
+  const translate = (texts) => texts[lang]
+  return (
+    <header className="site-header">
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -29,20 +31,30 @@ const Header = ({ siteTitle }) => (
           margin: 0,
           padding: `1.45rem 1.0875rem`, 
         }}>
-          <button>Eng</button> / <button>Esp</button>
+          <button onClick={ toggleLang }>{ lang === 'en' ? 'Español' : 'English' }</button>
         </div>
       </div>
       <nav className="main-navigation">
-        <Link to="/">Home</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/about-us">About Us</Link>
-        <Link to="/contact-us">Contact Us</Link>
+        <Link to={ translate({en: '/', es: '/es/'}) }>
+          { translate({en: 'Home', es: 'Casa'}) }
+        </Link>
+        <Link to={ translate({en: 'products', es: '/es/productos'}) }>
+          { translate({en: 'Products', es: 'Productos'}) }
+        </Link>
+        <Link to={ translate({en: 'about-us', es: '/es/perfile-de-empresa'}) }>
+          { translate({en: 'About Us', es: 'Perfil de empresa'}) }
+        </Link>
+        <Link to={ translate({en: 'contact-us', es: '/es/contacto'}) }>
+          { translate({en: 'Contact Us', es: 'Contacto'}) }
+        </Link>
       </nav>
-  </header>
-)
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  toggleLang: PropTypes.func
 }
 
 Header.defaultProps = {

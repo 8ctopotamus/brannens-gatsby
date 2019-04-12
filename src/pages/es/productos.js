@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 
-import './products.css'
+import '../products.css'
 
 const brandsList = [
   {
@@ -103,13 +103,13 @@ const brandsList = [
 ]
 
 const brands = brandsList.map(b => {
-  return { ...b, img:   require('../images/brand-logos/' + b.img) }
+  return { ...b, img:   require('../../images/brand-logos/' + b.img) }
 })
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Products" description="See our suppliers for fasteners, tools, and supplies here.  We have top named brands like DeWalt, Makita, Metabo, and more!" />
-    <h1>Products</h1>
+    <SEO title="Productos" description="See our suppliers for fasteners, tools, and supplies here.  We have top named brands like DeWalt, Makita, Metabo, and more!" />
+    <h1>Productos</h1>
     <div className="brand-logos">
       { 
         brands.map(b => (
