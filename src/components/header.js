@@ -35,16 +35,20 @@ const Header = ({ siteTitle, toggleLang, lang }) => {
         </div>
       </div>
       <nav className="main-navigation">
-        <Link to={ translate({en: '/', es: '/es/'}) }>
+        <Link to={ translate({en: '/', es: '/es/'}) }
+              activeClassName="active">
           { translate({en: 'Home', es: 'Casa'}) }
         </Link>
-        <Link to={ translate({en: 'products', es: '/es/productos'}) }>
+        <Link to={ translate({en: 'products', es: '/es/productos'}) }
+              activeClassName="active">
           { translate({en: 'Products', es: 'Productos'}) }
         </Link>
-        <Link to={ translate({en: 'about-us', es: '/es/perfile-de-empresa'}) }>
+        <Link to={ translate({en: 'about-us', es: '/es/perfil-de-empresa'}) }
+              activeClassName="active">
           { translate({en: 'About Us', es: 'Perfil de empresa'}) }
         </Link>
-        <Link to={ translate({en: 'contact-us', es: '/es/contacto'}) }>
+        <Link to={ translate({en: 'contact-us', es: '/es/contacto'}) }
+              activeClassName="active">
           { translate({en: 'Contact Us', es: 'Contacto'}) }
         </Link>
       </nav>

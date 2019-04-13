@@ -8,13 +8,22 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import { connect } from 'react-redux'
+import { setCallbackLink } from '../actions'
 
 import Header from "./header"
 import "./layout.css"
 
+const mapStateToProps = ({ callbackLink }) => ({ callbackLink })
+
+const mapDispatchToProps = dispatch => ({
+  setCallbackLink:  callbackLink => dispatch(setCallbackLink(callbackLink))
+})
+
 class Layout extends Component {
   constructor(props) {
     super(props)
+    console.log(this.props)
     this.state = {
       lang: 'en'
     }
@@ -73,4 +82,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default connect(mapStateToProps, mapDispatchToProps)(Layout)
