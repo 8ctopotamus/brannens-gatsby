@@ -1,7 +1,9 @@
 .site-header {
-  background: #fff;
   margin-bottom: 1.45rem;
   border-radius: 14px 14px 0 0;
+  background: #fff;
+  background: linear-gradient(90deg, #fff 0%, #000 70%);
+
 }
 
 .main-navigation {

@@ -9,7 +9,11 @@ import sanAntonioMapImg from '../../images/contact-us/san-antonio-map.jpg'
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Brannen's, Inc. Locations and Contact Info" description="Find our Austin, Conroe, and San Antonio addresses and phone numbers here for your fasteners, tools, and construction supplies." />
+    <SEO
+      title="Brannen's, Inc. Locations and Contact Info"
+      description="Encuentre nuestras direcciones y números de teléfono de Austin, Conroe y San Antonio aquí para sus sujetadores, herramientas y suministros de construcción."
+      lang="es"
+    />
     
     <h1>Contacto</h1>
 

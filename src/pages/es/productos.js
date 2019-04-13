@@ -108,7 +108,11 @@ const brands = brandsList.map(b => {
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Productos" description="See our suppliers for fasteners, tools, and supplies here.  We have top named brands like DeWalt, Makita, Metabo, and more!" />
+    <SEO 
+      title="Productos"
+      description="Consulte a nuestros proveedores para sujetadores, herramientas y suministros aquí. ¡Tenemos marcas de renombre como DeWalt, Makita, Metabo y más!" 
+      lang="es"
+    />
     <h1>Productos</h1>
     <div className="brand-logos">
       { 

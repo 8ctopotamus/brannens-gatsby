@@ -1,1 +1,1 @@
-export const setCallbackLink = callbackLink => ({ type: 'SET_CALLBACK_LINK', callbackLink })
+export const setLanguage = lang => ({ type: 'SET_LANGUAGE', lang })

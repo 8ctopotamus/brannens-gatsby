@@ -9,30 +9,26 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { connect } from 'react-redux'
-import { setCallbackLink } from '../actions'
+import { setLanguage } from '../actions'
 
 import Header from "./header"
 import "./layout.css"
 
-const mapStateToProps = ({ callbackLink }) => ({ callbackLink })
+const mapStateToProps = ({ lang }) => ({ lang })
 
 const mapDispatchToProps = dispatch => ({
-  setCallbackLink:  callbackLink => dispatch(setCallbackLink(callbackLink))
+  setLanguage: lang => dispatch(setLanguage(lang)),
 })
 
 class Layout extends Component {
   constructor(props) {
     super(props)
-    console.log(this.props)
-    this.state = {
-      lang: 'en'
-    }
     this.handleToggleLang = this.handleToggleLang.bind(this)
   }
 
   handleToggleLang() {
-    const lang = this.state.lang === 'en' ? 'es' : 'en'
-    this.setState({lang})
+    const lang = this.props.lang === 'en' ? 'es' : 'en'
+    this.props.setLanguage(lang)
   }
 
   render() {
@@ -60,14 +56,14 @@ class Layout extends Component {
           >
             <Header 
               siteTitle={ data.site.siteMetadata.title }
-              lang={ this.state.lang }
+              lang={ this.props.lang }
               toggleLang={ this.handleToggleLang }
             />
             <main style={{ padding: `0px 1.0875rem 1.45rem`, }}>
               { children }
             </main>
-            <footer>
-              © {new Date().getFullYear()}, Built by
+            <footer className="site-footer">
+              © { new Date().getFullYear() }, Built by
               {` `}
               <a href="https://www.serafingroup.com" target="_blank" rel="noopener noreferrer">Serafin Group, LLC</a>
             </footer>

@@ -1,16 +1,15 @@
 import { createStore as reduxCreateStore } from 'redux'
 
-const SET_CALLBACK_LINK = 'SET_CALLBACK_LINK'
+const SET_LANGUAGE = 'SET_LANGUAGE'
 
 const reducer = (state, action) => {
-  if (action.type === SET_CALLBACK_LINK) {
-    return Object.assign({}, state, { callbackLink: action.callbackLink })
+  if (action.type === SET_LANGUAGE) {
+    return Object.assign({}, state, {lang: action.lang })
   }
   return state
 }
 
 const initialState = {
-  callbackLink: '/',
   lang: 'en',
 }
 
