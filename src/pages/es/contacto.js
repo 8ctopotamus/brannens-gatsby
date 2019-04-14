@@ -7,7 +7,7 @@ import austinMapImg from '../../images/contact-us/austin-map.jpg'
 import conroeMapImg from '../../images/contact-us/conroe-map.jpg'
 import sanAntonioMapImg from '../../images/contact-us/san-antonio-map.jpg'
 
-const SecondPage = () => (
+const Contacto = () => (
   <Layout>
     <SEO
       title="Brannen's, Inc. Locations and Contact Info"
@@ -65,4 +65,4 @@ const SecondPage = () => (
   </Layout>
 )
 
-export default SecondPage
+export default Contacto

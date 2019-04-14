@@ -7,7 +7,7 @@ import aboutUsImg from '../../images/about-us/about-us.jpg'
 import storeImg1 from '../../images/about-us/store1.jpg'
 import storeImg2 from '../../images/about-us/store2.jpg'
 
-const SecondPage = () => (
+const PerfileDeEmpresa = () => (
   <Layout>
     <SEO
       title="About Brannen's Fastener, Tool, & Supply Company"
@@ -43,4 +43,4 @@ const SecondPage = () => (
   </Layout>
 )
 
-export default SecondPage
+export default PerfileDeEmpresa

@@ -2,10 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-import './header.css';
+import './header.css'
 
 const Header = ({ siteTitle, toggleLang, lang }) => {
-  const translate = (texts) => texts[lang]
+  const renderTranslation = (texts) => texts[lang]
   return (
     <header className="site-header">
       <div style={{
@@ -31,25 +31,27 @@ const Header = ({ siteTitle, toggleLang, lang }) => {
           margin: 0,
           padding: `1.45rem 1.0875rem`, 
         }}>
-          <button onClick={ toggleLang }>{ lang === 'en' ? 'Español' : 'English' }</button>
+          <button onClick={ toggleLang }>
+            { lang === 'en' ? 'Español' : 'English' }
+          </button>
         </div>
       </div>
       <nav className="main-navigation">
-        <Link to={ translate({en: '/', es: '/es/'}) }
+        <Link to={ renderTranslation({en: '/', es: '/es/'}) }
               activeClassName="active">
-          { translate({en: 'Home', es: 'Casa'}) }
+          { renderTranslation({en: 'Home', es: 'Casa'}) }
         </Link>
-        <Link to={ translate({en: 'products', es: '/es/productos'}) }
+        <Link to={ renderTranslation({en: 'products', es: '/es/productos'}) }
               activeClassName="active">
-          { translate({en: 'Products', es: 'Productos'}) }
+          { renderTranslation({en: 'Products', es: 'Productos'}) }
         </Link>
-        <Link to={ translate({en: 'about-us', es: '/es/perfil-de-empresa'}) }
+        <Link to={ renderTranslation({en: 'about-us', es: '/es/perfil-de-empresa'}) }
               activeClassName="active">
-          { translate({en: 'About Us', es: 'Perfil de empresa'}) }
+          { renderTranslation({en: 'About Us', es: 'Perfil de empresa'}) }
         </Link>
-        <Link to={ translate({en: 'contact-us', es: '/es/contacto'}) }
+        <Link to={ renderTranslation({en: 'contact-us', es: '/es/contacto'}) }
               activeClassName="active">
-          { translate({en: 'Contact Us', es: 'Contacto'}) }
+          { renderTranslation({en: 'Contact Us', es: 'Contacto'}) }
         </Link>
       </nav>
     </header>
