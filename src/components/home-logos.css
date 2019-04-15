@@ -1,0 +1,7 @@
+.home-logos {
+  display: grid;
+  grid-gap: 10%;
+  grid-template-columns: 1fr 1fr;
+  max-width: 500px;
+  margin: 0 auto;
+}

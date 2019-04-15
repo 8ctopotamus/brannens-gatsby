@@ -50,11 +50,8 @@ const Layout = (props)=> {
             const currentPath = windowGlobal.location.pathname
             const { urlTranslationsMap } = data.site.siteMetadata
             const match = urlTranslationsMap.find(arr => arr.indexOf(currentPath) > -1)
-            console.log(match)
             if (match) {
               const destination = match.find(path => path !== currentPath)
-              console.log(currentPath)
-              console.log(destination)
               navigateTo(destination)
             }
           }
