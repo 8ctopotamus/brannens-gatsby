@@ -13,9 +13,9 @@ const Header = ({ siteTitle, toggleLang, lang }) => {
         justifyContent: 'space-between',
         alignItems: 'center',
       }}>
-        <h2 style={{ 
+        <h2 style={{
           margin: 0,
-          padding: `1.45rem 1.0875rem`, 
+          padding: `1.45rem 1.0875rem`,
         }}>
           <Link
             to="/"
@@ -29,9 +29,9 @@ const Header = ({ siteTitle, toggleLang, lang }) => {
         </h2>
         <div style={{
           margin: 0,
-          padding: `1.45rem 1.0875rem`, 
+          padding: `1.45rem 1.0875rem`,
         }}>
-          <button onClick={ toggleLang }>
+          <button id="language-toggle-btn" onClick={ toggleLang }>
             { lang === 'en' ? 'Español' : 'English' }
           </button>
         </div>

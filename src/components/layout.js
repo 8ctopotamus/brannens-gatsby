@@ -5,14 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, { Component } from "react"
+import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, navigateTo } from "gatsby"
 import { connect } from 'react-redux'
 import { setLanguage } from '../actions'
 
 import Header from "./header"
 import "./layout.css"
+
+const windowGlobal = typeof window !== 'undefined' && window
 
 const mapStateToProps = ({ lang }) => ({ lang })
 
@@ -20,46 +22,52 @@ const mapDispatchToProps = dispatch => ({
   setLanguage: lang => dispatch(setLanguage(lang)),
 })
 
-class Layout extends Component {
-  constructor(props) {
-    super(props)
-    this.handleToggleLang = this.handleToggleLang.bind(this)
-  }
+const Layout = (props)=> {
+  const {
+    children,
+    location,
+    lang,
+    setLanguage
+  } = props
 
-  handleToggleLang() {
-    const lang = this.props.lang === 'en' ? 'es' : 'en'
-    this.props.setLanguage(lang)
-  }
-
-  render() {
-    const { children } = this.props
-    return (
-      <StaticQuery
-        query={graphql`
-          query SiteTitleQuery {
-            site {
-              siteMetadata {
-                title
-              }
+  return (
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+              urlTranslationsMap
             }
           }
-        `}
-        render={data => (
-          <div
-            style={{
-              margin: `0 auto`,
-              maxWidth: 960,
-              paddingTop: 0,
-              background: '#fff',
-              borderRadius: '14px'
-            }}
-          >
-            <Header 
+        }
+      `}
+      render={data => {
+        const handleToggleLang = () => {
+          const newLang = lang === 'en' ? 'es' : 'en'
+          setLanguage(newLang)
+          if (windowGlobal) {
+            const currentPath = windowGlobal.location.pathname
+            const { urlTranslationsMap } = data.site.siteMetadata
+            const match = urlTranslationsMap.find(arr => arr.indexOf(currentPath) > -1)
+            console.log(match)
+            if (match) {
+              const destination = match.find(path => path !== currentPath)
+              console.log(currentPath)
+              console.log(destination)
+              navigateTo(destination)
+            }
+          }
+        }
+        return (
+          <div className="page-wrap">
+            <Header
               siteTitle={ data.site.siteMetadata.title }
-              lang={ this.props.lang }
-              toggleLang={ this.handleToggleLang }
+              lang={ lang }
+              toggleLang={ handleToggleLang }
+              location={ location }
             />
-            <main style={{ padding: `0px 1.0875rem 1.45rem`, }}>
+            <main>
               { children }
             </main>
             <footer className="site-footer">
@@ -68,10 +76,10 @@ class Layout extends Component {
               <a href="https://www.serafingroup.com" target="_blank" rel="noopener noreferrer">Serafin Group, LLC</a>
             </footer>
           </div>
-        )}
-      />
-    )
-  }
+        )
+      }}
+    />
+  )
 }
 
 Layout.propTypes = {

@@ -1,9 +1,9 @@
 .site-header {
-  margin-bottom: 1.45rem;
-  border-radius: 14px 14px 0 0;
+  padding-top: 30px;
+  /* margin-bottom: 1.45rem; */
+  border-radius: inherit;
   background: #fff;
   background: linear-gradient(90deg, #fff 0%, #000 70%);
-
 }
 
 .main-navigation {
@@ -21,6 +21,8 @@
   width: 100%;
   text-align: center;
   border-right: 1px solid #b6570a;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
 }
 
 .main-navigation > a:last-child {
@@ -34,4 +36,13 @@
 .main-navigation > a.active {
   background: #d9670a;
   box-shadow: inset 0px 0px 3px rgba(0, 0, 0, .25);
+}
+
+#language-toggle-btn {
+  background: #fff;
+  border-radius: 8px;
+  font-family: sans-serif;
+  border: 1px solid lightgrey;
+  padding: 4px 8px;
+  cursor: pointer;
 }

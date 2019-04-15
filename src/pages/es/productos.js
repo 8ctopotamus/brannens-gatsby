@@ -5,13 +5,15 @@ import BrandsList from '../../components/brands-list'
 
 const Productos = () => (
   <Layout>
-    <SEO 
+    <SEO
       title="Productos"
-      description="Consulte a nuestros proveedores para sujetadores, herramientas y suministros aquí. ¡Tenemos marcas de renombre como DeWalt, Makita, Metabo y más!" 
+      description="Consulte a nuestros proveedores para sujetadores, herramientas y suministros aquí. ¡Tenemos marcas de renombre como DeWalt, Makita, Metabo y más!"
       lang="es"
     />
     <h1>Productos</h1>
-    <BrandsList />
+    <div className="page-content">
+      <BrandsList />
+    </div>
   </Layout>
 )
 

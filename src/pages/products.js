@@ -7,7 +7,9 @@ const Products = () => (
   <Layout>
     <SEO title="Products" description="See our suppliers for fasteners, tools, and supplies here.  We have top named brands like DeWalt, Makita, Metabo, and more!" />
     <h1>Products</h1>
-    <BrandsList />
+    <div className="page-content">
+      <BrandsList />
+    </div>
   </Layout>
 )
 

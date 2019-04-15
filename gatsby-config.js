@@ -2,7 +2,13 @@ module.exports = {
   siteMetadata: {
     title: `Brannen's, Inc.`,
     description: `Brannen's | Fasteners, Tools, and Construction Supplies`,
-    author: `@gatsbyjs`,
+    author: `@8ctopotamus`,
+    urlTranslationsMap: [
+      ['/', '/es'],
+      ['/products', '/es/productos'],
+      ['/about-us', '/es/perfil-de-empresa'],
+      ['/contact-us', '/es/contacto']
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
