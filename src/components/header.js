@@ -4,6 +4,8 @@ import React from "react"
 
 import './header.css'
 
+import Logo from '../images/brannens-logo.png'
+
 const Header = ({ siteTitle, toggleLang, lang }) => {
   const renderTranslation = (texts) => texts[lang]
   return (
@@ -24,7 +26,7 @@ const Header = ({ siteTitle, toggleLang, lang }) => {
               textDecoration: `none`,
             }}
           >
-            {siteTitle}
+            <img src={Logo} alt={siteTitle} className="logo" />
           </Link>
         </h2>
         <div style={{

@@ -3,7 +3,13 @@
   /* margin-bottom: 1.45rem; */
   border-radius: inherit;
   background: #fff;
-  background: linear-gradient(90deg, #fff 0%, #000 70%);
+  background: linear-gradient(90deg, #fff 20%, #000 100%);
+}
+
+.logo {
+  width: 260px;
+  height: auto;
+  margin-bottom: 0;
 }
 
 .main-navigation {

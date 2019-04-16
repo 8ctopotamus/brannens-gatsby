@@ -70,7 +70,7 @@ const Layout = (props)=> {
             <footer className="site-footer">
               © { new Date().getFullYear() }, Built by
               {` `}
-              <a href="https://www.serafingroup.com" target="_blank" rel="noopener noreferrer">Serafin Group, LLC</a>
+              <a href="https://suurv.com  " target="_blank" rel="noopener noreferrer nofollow">SUURV Technologies</a>
             </footer>
           </div>
         )
