@@ -671,11 +671,30 @@ pre tt:after {
   color: white;
 }
 
+/* Contact/Contacto */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 25px;
+}
+
+.grid-item:first-child {
+  padding-bottom: 25px;
+}
+
+.contact-grid h4 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
   }
   .page-content {
     padding: 0px 1.0875rem 1.45rem;
+  }
+  .contact-grid {
+    display: block;
   }
 }
