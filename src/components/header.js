@@ -8,6 +8,25 @@ import Logo from '../images/brannens-logo.png'
 
 const Header = ({ siteTitle, toggleLang, lang }) => {
   const renderTranslation = (texts) => texts[lang]
+  const handleHamburgerClick = e => {
+    let nav
+    let hamb
+    if (e.target.parentNode.className === 'main-navigation') {
+      nav = e.target.parentNode
+      hamb = e.target
+    } else {
+      nav = e.target.parentNode.parentNode
+      hamb = e.target.parentNode
+    }
+    console.log(nav, hamb)
+    if (nav.className.includes('change')) {
+      nav.classList.remove('change')
+      hamb.classList.remove('change')
+    } else {
+      nav.classList.add('change')   
+      hamb.classList.add('change') 
+    }
+  }
   return (
     <header className="site-header">
       <div style={{
@@ -39,6 +58,11 @@ const Header = ({ siteTitle, toggleLang, lang }) => {
         </div>
       </div>
       <nav className="main-navigation">
+        <div className="hamburger" onClick={ handleHamburgerClick }>
+          <div className="bar1"></div>
+          <div className="bar2"></div>
+          <div className="bar3"></div>
+        </div>
         <Link to={ renderTranslation({en: '/', es: '/es/'}) }
               activeClassName="active">
           { renderTranslation({en: 'Home', es: 'Casa'}) }
