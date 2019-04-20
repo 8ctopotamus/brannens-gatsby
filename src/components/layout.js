@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql, navigateTo } from "gatsby"
+import { StaticQuery, graphql, navigate } from "gatsby"
 import { connect } from 'react-redux'
 import { setLanguage } from '../actions'
 
@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => ({
   setLanguage: lang => dispatch(setLanguage(lang)),
 })
 
-const Layout = (props)=> {
+const Layout = (props) => {
   const {
     children,
     location,
@@ -35,6 +35,7 @@ const Layout = (props)=> {
       query={graphql`
         query SiteTitleQuery {
           site {
+            pathPrefix
             siteMetadata {
               title
               urlTranslationsMap
@@ -46,14 +47,33 @@ const Layout = (props)=> {
         const handleToggleLang = () => {
           const newLang = lang === 'en' ? 'es' : 'en'
           setLanguage(newLang)
-          if (windowGlobal) {
-            const currentPath = windowGlobal.location.pathname
-            const { urlTranslationsMap } = data.site.siteMetadata
-            const match = urlTranslationsMap.find(arr => arr.indexOf(currentPath) > -1)
-            if (match) {
-              const destination = match.find(path => path !== currentPath)
-              navigateTo(destination)
-            }
+          // redirect
+          const { urlTranslationsMap } = data.site.siteMetadata
+          const currentPath = windowGlobal.location.pathname
+          let path = currentPath
+          
+          if (currentPath.includes(data.site.pathPrefix)) {
+            path = currentPath.replace(data.site.pathPrefix, '')
+          }
+
+          const match = urlTranslationsMap.find(arr => {
+            console.log('Path:', path)
+            return arr.indexOf(path) > -1
+          })
+
+          console.log({
+            isProduction: currentPath.includes(data.site.pathPrefix),
+            prefix: data.site.pathPrefix,
+            urlTranslationsMap,
+            currentPath,
+            path,
+            match
+          })
+
+          if (match) {
+            const destination = match.find(p => p !== path)
+            console.log('destionation: ',destination)
+            navigate(destination)
           }
         }
         return (

@@ -5,10 +5,10 @@ module.exports = {
     description: `Brannen's | Fasteners, Tools, and Construction Supplies`,
     author: `@8ctopotamus`,
     urlTranslationsMap: [
-      ['/', '/es'],
-      ['/products', '/es/productos'],
-      ['/about-us', '/es/perfil-de-empresa'],
-      ['/contact-us', '/es/contacto']
+      ['/', '/es/'],
+      ['/products/', '/es/productos/'],
+      ['/about-us/', '/es/perfil-de-empresa/'],
+      ['/contact-us/', '/es/contacto/']
     ]
   },
   plugins: [

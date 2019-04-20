@@ -18,7 +18,6 @@ const Header = ({ siteTitle, toggleLang, lang }) => {
       nav = e.target.parentNode.parentNode
       hamb = e.target.parentNode
     }
-    console.log(nav, hamb)
     if (nav.className.includes('change')) {
       nav.classList.remove('change')
       hamb.classList.remove('change')
