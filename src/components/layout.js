@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql, navigate } from "gatsby"
+import { StaticQuery, graphql, navigateTo } from "gatsby"
 import { connect } from 'react-redux'
 import { setLanguage } from '../actions'
 
@@ -57,7 +57,6 @@ const Layout = (props) => {
           }
 
           const match = urlTranslationsMap.find(arr => {
-            console.log('Path:', path)
             return arr.indexOf(path) > -1
           })
 
@@ -73,7 +72,7 @@ const Layout = (props) => {
           if (match) {
             const destination = match.find(p => p !== path)
             console.log('destionation: ',destination)
-            navigate(destination)
+            navigateTo(destination)
           }
         }
         return (

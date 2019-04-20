@@ -6,9 +6,9 @@ module.exports = {
     author: `@8ctopotamus`,
     urlTranslationsMap: [
       ['/', '/es/'],
-      ['/products/', '/es/productos/'],
-      ['/about-us/', '/es/perfil-de-empresa/'],
-      ['/contact-us/', '/es/contacto/']
+      ['/products', '/es/productos'],
+      ['/about-us', '/es/perfil-de-empresa'],
+      ['/contact-us', '/es/contacto']
     ]
   },
   plugins: [
