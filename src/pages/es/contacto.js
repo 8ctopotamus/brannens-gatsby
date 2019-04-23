@@ -29,7 +29,7 @@ const Contacto = () => (
           <strong>Fax:</strong> (512) 454-7385<br/>
           <strong>Gerente:</strong> Bill Gannaway<br/>
           <strong>Email:</strong> billg@brannens.com
-          <h4>Hours</h4>
+          <h4>Horas de servicio</h4>
           <strong>Lunes - Viernes:</strong> 7 am - 4:30 pm<br/>
           <strong>Sábado:</strong> 8 am - 12 pm
         </div>
@@ -54,7 +54,7 @@ const Contacto = () => (
           <strong>Fax:</strong> (936) 756-5298<br/>
           <strong>Gerente:</strong> Ty Collignon<br/>
           <strong>Email:</strong> ty@brannens.com<br/>
-          <h4>Hours</h4>
+          <h4>Horas de servicio</h4>
           <strong>Lunes - Viernes:</strong> 7 am - 5 pm
           <strong>Sábado:</strong> 8 am - 12 pm
         </div>
@@ -78,7 +78,7 @@ const Contacto = () => (
           <strong>Fax:</strong> (210) 736-1860<br/>
           <strong>Gerente:</strong> Robert Higle<br/>
           <strong>Email:</strong> robert@brannens.com<br/>
-          <h4>Hours</h4>
+          <h4>Horas de servicio</h4>
           <strong>Lunes - Viernes:</strong> 7 am - 4:30 pm<br/>
           <strong>Sábado:</strong> 8 am - 12 pm
         </div>
